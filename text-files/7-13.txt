@@ -1,0 +1,52 @@
+// Arrays
+/*
+string[] familyMembers = new string[4];
+familyMembers[0] = "David";
+familyMembers[1] = "Stacey";
+familyMembers[2] = "Lacey";
+familyMembers[3] = "Cody";
+*/
+
+string[] familyMembers = ["David", "Stacey", "Lacey", "Cody"];
+
+Console.WriteLine($"Father:\t\t {familyMembers[0]}");
+Console.WriteLine($"Mother:\t\t {familyMembers[1]}");
+Console.WriteLine($"Daughter:\t {familyMembers[2]}");
+Console.WriteLine($"Son:\t\t {familyMembers[3]}");
+
+familyMembers[0] = "Amazon man";;
+Console.WriteLine($"Father:\t\t {familyMembers[0]}");
+Console.WriteLine($"\n There are {familyMembers.Length} family members");
+
+//foreach
+
+string[] orderNumber = ["a9168", "d846", "h765", "gr54"];
+
+foreach (var order in orderNumber) // could declare order a string too
+{
+   Console.WriteLine(order);
+}
+
+int[] items = { 412, 23, 312, 42 };
+int sum = 0;
+int bin = 0;
+
+foreach (int item in items)
+{
+   sum += item;
+   bin++;
+   Console.WriteLine($"Bin {bin}: {item} items");
+}
+
+=== === === === === === === === 
+
+Console.WriteLine($"We have {sum} items");
+
+string[] fraudIDs = {"b123", "c84888", "b548", "564", "bs88", "asd477", "bre54"};
+
+foreach (string fraudID in fraudIDs)
+{
+   if (fraudID.StartsWith("b")){
+      Console.WriteLine(fraudID);
+   }
+}
