@@ -1,8 +1,16 @@
-﻿string[] fraudIDs = {"b123", "c84888", "b548", "564", "bs88", "asd477", "bre54"};
+﻿/* Letter Grades 
+97 - 100   A+
+93 - 96    A
+90 - 92    A-
+87 - 89    B+
+83 - 86    B
+80 - 82    B-
+77 - 79    C+
+73 - 76    C
+70 - 72    C-
+67 - 69    D+
+63 - 66    D
+60 - 62    D-
+0  - 59    F
+*/
 
-foreach (string fraudID in fraudIDs)
-{
-   if (fraudID.StartsWith("b")){
-      Console.WriteLine(fraudID);
-   }
-}
