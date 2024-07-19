@@ -133,4 +133,96 @@ for (int i = 0; i <= 100; i++)
 
 
 === do - while loops == == ==
+// do-while, while and continue statements
 
+Random random = new();
+
+int current = random.Next(10);
+
+do
+{
+
+   current = random.Next(100);
+   if (current >= 50) continue;
+   Console.WriteLine(current);
+
+} while (current != 7);
+
+// while (current >= 3)
+// {
+//    Console.WriteLine(current);
+//    current = random.Next(10);
+
+// }
+
+// Console.WriteLine($"Last Number: {current}");
+
+=== === Hero/Monster battler challenge  === ===
+
+//My code
+int heroHealth = 10;
+int monsterHealth = 10;
+
+Random attackValue = new();
+int attack = attackValue.Next(0, 11);
+
+bool heroTurn = true;
+bool monsterTurn = false;
+
+do
+{
+
+   if (heroTurn == true)
+   {
+      attack = attackValue.Next(0, 11);
+      monsterHealth = monsterHealth - attack;
+      Console.WriteLine($"Monster was damaged and lost {attack} health and now has {monsterHealth} health");
+      heroTurn = false;
+      monsterTurn = true;
+   }
+
+   else if (monsterTurn == true)
+   {
+      attack = attackValue.Next(0, 11);
+      heroHealth = heroHealth - attack;
+      Console.WriteLine($"Hero was damaged and lost {attack} health and now has {heroHealth} health");
+      monsterTurn = false;
+      heroTurn = true;
+
+   }
+
+   if (monsterHealth <= 0)
+   {
+      Console.WriteLine("Hero wins!");
+      break;
+   }
+   else if (heroHealth <= 0)
+   {
+      Console.WriteLine("Monster wins!");
+      break;
+   }
+} while (monsterHealth >= 0 || heroHealth >= 0);
+`
+
+// microsoft code
+
+int hero = 10;
+int monster = 10;
+
+Random dice = new Random();
+
+do
+{
+    int roll = dice.Next(1, 11);
+    monster -= roll;
+    Console.WriteLine($"Monster was damaged and lost {roll} health and now has {monster} health.");
+
+    if (monster <= 0) continue;
+
+    roll = dice.Next(1, 11);
+    hero -= roll;
+    Console.WriteLine($"Hero was damaged and lost {roll} health and now has {hero} health.");
+
+} while (hero > 0 && monster > 0);
+
+Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
