@@ -226,3 +226,54 @@ do
 } while (hero > 0 && monster > 0);
 
 Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
+
+=== === do while baseball inning game === ===
+
+
+
+int balls = 0;
+int strikes = 0;
+int outs = 0;
+int walk = 0;
+int runs = 0;
+Random dice = new();
+
+do
+{
+   int rolling = dice.Next(1, 7);
+   if (rolling == 1 || rolling == 3 || rolling == 5)
+   {
+      strikes++;
+      Console.WriteLine($"Strikes: {strikes}");
+      if (strikes > 2)
+      {
+         strikes = 0;
+         balls = 0;
+         outs++;
+         Console.WriteLine($"Outs: {outs}");
+      }
+   }
+   else
+   {
+      balls++;
+      Console.WriteLine($"Balls: {balls}");
+      if (balls > 3)
+      {
+         strikes = 0;
+         balls = 0;
+         walk++;
+         if (walk > 3)
+         {
+            strikes = 0;
+            balls = 0;
+            runs++;
+            Console.WriteLine("RUN SCORED!");
+         }
+         Console.WriteLine($"Walk! {walk}");
+
+      }
+   }
+
+} while (outs <= 2);
+
+Console.WriteLine($"\nTotal runs scored: {runs}");
