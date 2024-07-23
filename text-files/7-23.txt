@@ -1,0 +1,16 @@
+Code project 1 - write code that validates integer input
+
+string? user_input;
+
+Console.WriteLine("All entries must be between 5-10 chars");
+
+do
+{
+   user_input = Console.ReadLine();
+   if (user_input.Length < 5 || user_input.Length > 10)
+   {
+      Console.WriteLine($"MF you aint following the prompts bitch. You only entered, {user_input.Length}! Raed Prompt and try again!");
+   }
+} while (user_input.Length <5 || user_input.Length >10);
+
+Console.WriteLine("Thanks");
