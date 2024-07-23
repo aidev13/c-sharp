@@ -14,3 +14,65 @@ do
 } while (user_input.Length <5 || user_input.Length >10);
 
 Console.WriteLine("Thanks");
+
+
+
+Code project 2 - write code that validates string input
+
+string? role;
+bool valid;
+
+Console.WriteLine("What is your role? Administrator, Manager or User?");
+
+do
+{
+   role = Console.ReadLine()?.Trim().ToLower();
+   if (role == "admin" || role == "manager" || role == "user")
+   {
+      Console.WriteLine($"Your input of {role} has been accepted.");
+      valid = true;
+   }
+   else
+   {
+      Console.WriteLine($"The entry of \"{role}\" is not accepted. Try again.");
+      valid = false;
+   }
+} while (valid == false);
+
+
+Code project 3 - Write code that processes the contents of a string array
+
+
+// Declare and initialize the string array
+string[] myStrings = new string[2] { "I like pizza. I like roast chicken. I like salad", "I like all three of the menu choices" };
+
+// Outer loop to process each string element in the array
+foreach (string myString in myStrings)
+{
+   // Get the location of the first period character in the string
+   int periodLocation = myString.IndexOf(".");
+
+   // Inner loop to extract and display each sentence
+   string remainingString = myString;
+   while (periodLocation != -1)
+   {
+      // Extract the sentence without the period
+      string sentence = remainingString.Substring(0, periodLocation).TrimStart();
+
+      // Display the sentence
+      Console.WriteLine(sentence);
+
+      // Remove the processed sentence from the remaining string
+      remainingString = remainingString.Remove(0, periodLocation + 1);
+
+      // Get the location of the next period character in the remaining string
+      periodLocation = remainingString.IndexOf(".");
+   }
+
+   // If there are no periods left, display the remaining part of the string
+   if (!string.IsNullOrWhiteSpace(remainingString))
+   {
+      Console.WriteLine(remainingString.TrimStart());
+   }
+
+}
